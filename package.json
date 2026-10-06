@@ -1,0 +1,27 @@
+{
+  "name": "bulldozer-commerce",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "node --watch backend/index.js",
+    "dev:client": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "start": "node backend/index.js",
+    "seed": "node backend/seed.js",
+    "test": "node --test backend/services/*.test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "mongoose": "^8.12.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "vite": "^6.2.0"
+  }
+}
